@@ -1,0 +1,16 @@
+apiVersion: "v1"
+kind: Pod
+metadata:
+  name: rjk8s-web-pod
+  labels:
+    name: webapp
+    env: test
+spec:
+  containers:
+    - name: rjk8s-my-webapp
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: httpd
+          protocol: TCP
+  
