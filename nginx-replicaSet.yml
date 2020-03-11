@@ -9,7 +9,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-    name: rjk8s-web-pod
+      name: rjk8s-web-pod
   template:
     metadata:
       labels:
