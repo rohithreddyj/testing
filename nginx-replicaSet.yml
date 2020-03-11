@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rjk8s-web-pod-rs
+  labels:
+    name: rjk8s-web-pod
+    env: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+    name: rjk8s-web-pod
+  template:
+    metadata:
+      labels:
+        name: rjk8s-web-pod
+        env: test
+    spec:
+        containers:
+          - name: rjk8s-my-webapp
+            image: nginx
+            ports:
+              - containerPort: 80
+                name: httpd
+                protocol: TCP
+  
