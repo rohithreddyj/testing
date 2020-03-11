@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rjk8s-web-pod-dep
+  labels:
+    name: rjk8s-web-pod
+    env: test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: rjk8s-web-pod
+  template:
+    metadata:
+      labels:
+        name: rjk8s-web-pod
+        env: test
+    spec:
+      containers:
+        - name: rjk8s-web-pod
+          image: nginx
+          ports:
+            - containerPort: 80
+              name: 80
+              protocol: TCP
+              
+     
+      
